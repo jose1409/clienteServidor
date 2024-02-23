@@ -1,5 +1,5 @@
 
-package bussiness;
+package business;
 
 public class Main {
 
