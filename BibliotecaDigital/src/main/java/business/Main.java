@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package main.AvanceI;
+package business;
 
 /**
  *
  * @author braym
  */
-public class BibliotecaDigital {
+public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
