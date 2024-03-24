@@ -8,12 +8,12 @@ package domain;
  *
  * @author Usuario
  */
-public class Autores extends Persona {
+public class Autor extends Persona {
 
     private int id;
     private String nacionalidad;
 
-    public Autores() {
+    public Autor() {
         this.id = 0;
         this.nacionalidad = "";
     }

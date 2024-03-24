@@ -11,19 +11,26 @@ package domain;
 public class Libro {
 
     private int id;
-    private int idAutor;
-    private int idEstudiante;
+    Autor autor;
+    Estudiante estudiante;
     private String nombre;
     private String fechaLanzamiento;
     private boolean disponibilidad;
 
     public Libro() {
         this.id = 0;
-        this.idAutor = 0;
-        this.idEstudiante = 0;
         this.nombre = "";
         this.fechaLanzamiento = "";
         this.disponibilidad = true;
+    }
+
+    public Libro(int id, Autor autor, Estudiante estudiante, String nombre, String fechaLanzamiento, boolean disponibilidad) {
+        this.id = id;
+        this.autor = autor;
+        this.estudiante = null;
+        this.nombre = nombre;
+        this.fechaLanzamiento = fechaLanzamiento;
+        this.disponibilidad = disponibilidad;
     }
 
     public int getId() {
@@ -34,20 +41,20 @@ public class Libro {
         this.id = id;
     }
 
-    public int getIdAutor() {
-        return idAutor;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setIdAutor(int idAutor) {
-        this.idAutor = idAutor;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
-    public int getIdEstudiante() {
-        return idEstudiante;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setIdEstudiante(int idEstudiante) {
-        this.idEstudiante = idEstudiante;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
     public String getNombre() {
