@@ -4,6 +4,8 @@
  */
 package business;
 
+import javax.swing.JOptionPane;
+import presentation.*;
 /**
  *
  * @author Usuario
@@ -32,12 +34,13 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mitLibros = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mitOpciones = new javax.swing.JMenu();
+        mitLibros = new javax.swing.JMenuItem();
         mitPrestamo = new javax.swing.JMenuItem();
         mitAutores = new javax.swing.JMenuItem();
         mitEstudiantes = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        mitSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Proyecto");
@@ -68,23 +71,57 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jLabel3.setOpaque(true);
 
-        mitLibros.setText("Opciones");
+        mitOpciones.setText("Opciones");
 
-        jMenuItem1.setText("Libros");
-        mitLibros.add(jMenuItem1);
+        mitLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/books_12958774.png"))); // NOI18N
+        mitLibros.setText("Libros");
+        mitLibros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitLibrosActionPerformed(evt);
+            }
+        });
+        mitOpciones.add(mitLibros);
 
+        mitPrestamo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/payment_3532267.png"))); // NOI18N
         mitPrestamo.setText("Prestamo");
-        mitLibros.add(mitPrestamo);
+        mitPrestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitPrestamoActionPerformed(evt);
+            }
+        });
+        mitOpciones.add(mitPrestamo);
 
+        mitAutores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/literature_6409763.png"))); // NOI18N
         mitAutores.setText("Autores");
-        mitLibros.add(mitAutores);
+        mitAutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitAutoresActionPerformed(evt);
+            }
+        });
+        mitOpciones.add(mitAutores);
 
+        mitEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reader_10985366.png"))); // NOI18N
         mitEstudiantes.setText("Estudiantes");
-        mitLibros.add(mitEstudiantes);
+        mitEstudiantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitEstudiantesActionPerformed(evt);
+            }
+        });
+        mitOpciones.add(mitEstudiantes);
 
-        jMenuBar1.add(mitLibros);
+        jMenuBar1.add(mitOpciones);
 
-        jMenu2.setText("Salir");
+        jMenu2.setText("Salida");
+
+        mitSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit_1286853.png"))); // NOI18N
+        mitSalir.setText("Salir");
+        mitSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitSalirActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mitSalir);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -95,16 +132,12 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,6 +153,41 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mitAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAutoresActionPerformed
+        //Pestaña de ingreso de clientes
+        new soliAutor();
+        setVisible(false);
+    }//GEN-LAST:event_mitAutoresActionPerformed
+
+    private void mitLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitLibrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mitLibrosActionPerformed
+
+    private void mitPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitPrestamoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mitPrestamoActionPerformed
+
+    private void mitEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitEstudiantesActionPerformed
+        new soliEstudiantes();
+        setVisible(false);
+    }//GEN-LAST:event_mitEstudiantesActionPerformed
+
+    private void mitSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitSalirActionPerformed
+        int opcion = JOptionPane.showOptionDialog(null, "¿Desea salir?", "Salir",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                new String[]{"Salir", "Cancelar"}, "Salir");
+
+        if (opcion == JOptionPane.YES_OPTION) {
+            // Si el usuario elige "Salir"
+            System.out.println("Saliendo...");
+            System.exit(0);
+        } else {
+            // Si elige "Cancelar" o cierra el diálogo
+            System.out.println("Operacion cancelada.");
+            setVisible(true);
+        }
+    }//GEN-LAST:event_mitSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,10 +233,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem mitAutores;
     private javax.swing.JMenuItem mitEstudiantes;
-    private javax.swing.JMenu mitLibros;
+    private javax.swing.JMenuItem mitLibros;
+    private javax.swing.JMenu mitOpciones;
     private javax.swing.JMenuItem mitPrestamo;
+    private javax.swing.JMenuItem mitSalir;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,16 +10,14 @@ package domain;
  */
 public class Persona {
 
-    private String nombre;
-    private String apellido;
-    private String telefono;
-    private String nacimiento;
+    public String nombre;
+    public String apellido;
+    public String telefono;
 
     public Persona() {
         this.nombre = "";
         this.apellido = "";
         this.telefono = "";
-        this.nacimiento = "";
     }
 
     public String getNombre() {
@@ -44,14 +42,6 @@ public class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public String getNacimiento() {
-        return nacimiento;
-    }
-
-    public void setNacimiento(String nacimiento) {
-        this.nacimiento = nacimiento;
     }
 
 }

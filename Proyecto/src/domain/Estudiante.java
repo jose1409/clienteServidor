@@ -18,6 +18,16 @@ public class Estudiante extends Persona {
         this.carnet = "";
     }
 
+    public Estudiante(int id, String nombre, String apellido, String telefono, String carnet) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.carnet = carnet;
+    }
+    
+    
+
     public int getId() {
         return id;
     }
