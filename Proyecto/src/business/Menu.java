@@ -72,6 +72,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setOpaque(true);
 
         mitOpciones.setText("Opciones");
+        mitOpciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         mitLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/books_12958774.png"))); // NOI18N
         mitLibros.setText("Libros");
@@ -116,6 +117,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(mitOpciones);
 
         jMenu2.setText("Salida");
+        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         mitSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit_1286853.png"))); // NOI18N
         mitSalir.setText("Salir");
