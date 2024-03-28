@@ -75,6 +75,7 @@ public class Menu extends javax.swing.JFrame {
 
         mitLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/books_12958774.png"))); // NOI18N
         mitLibros.setText("Libros");
+        mitLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mitLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitLibrosActionPerformed(evt);
@@ -84,6 +85,7 @@ public class Menu extends javax.swing.JFrame {
 
         mitPrestamo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/payment_3532267.png"))); // NOI18N
         mitPrestamo.setText("Prestamo");
+        mitPrestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mitPrestamo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitPrestamoActionPerformed(evt);
@@ -93,6 +95,7 @@ public class Menu extends javax.swing.JFrame {
 
         mitAutores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/literature_6409763.png"))); // NOI18N
         mitAutores.setText("Autores");
+        mitAutores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mitAutores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitAutoresActionPerformed(evt);
@@ -102,6 +105,7 @@ public class Menu extends javax.swing.JFrame {
 
         mitEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reader_10985366.png"))); // NOI18N
         mitEstudiantes.setText("Estudiantes");
+        mitEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mitEstudiantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitEstudiantesActionPerformed(evt);
@@ -115,6 +119,7 @@ public class Menu extends javax.swing.JFrame {
 
         mitSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit_1286853.png"))); // NOI18N
         mitSalir.setText("Salir");
+        mitSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mitSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitSalirActionPerformed(evt);

@@ -15,6 +15,9 @@
                   <Image iconType="3" name="/img/books_12958774.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Libros"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitLibrosActionPerformed"/>
@@ -26,6 +29,9 @@
                   <Image iconType="3" name="/img/payment_3532267.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Prestamo"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitPrestamoActionPerformed"/>
@@ -37,6 +43,9 @@
                   <Image iconType="3" name="/img/literature_6409763.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Autores"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitAutoresActionPerformed"/>
@@ -48,6 +57,9 @@
                   <Image iconType="3" name="/img/reader_10985366.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estudiantes"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitEstudiantesActionPerformed"/>
@@ -66,6 +78,9 @@
                   <Image iconType="3" name="/img/exit_1286853.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitSalirActionPerformed"/>
