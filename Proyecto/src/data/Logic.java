@@ -4,6 +4,7 @@
  */
 package data;
 
+import CrudLibros.Libro;
 import static data.Listas.*;
 import domain.*;
 import presentation.Gui;
@@ -14,7 +15,7 @@ import presentation.Gui;
  */
 public class Logic {
 
-    //Ver Libros
+    /*Ver Libros
     public static void insertarLibros() {
         String temp = "---Libros---\n";
         for (int i = 0; i < libro.size(); i++) {
@@ -25,7 +26,7 @@ public class Logic {
                     + "Disponibilidad: " + disponibilidad + "\n\n";
         }
         Gui.print(temp);
-    }
+    }*/
 
     //Ver Autores
     public static void mostrarAutores() {
