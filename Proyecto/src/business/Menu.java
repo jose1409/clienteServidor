@@ -4,10 +4,8 @@
  */
 package business;
 
-import CrudLibros.ConsultasLibros;
-import CrudLibros.CtrlLibros;
-import CrudLibros.Libro;
-import CrudLibros.soliLibros;
+import domain.Libro;
+import presentation.soliLibros;
 import javax.swing.JOptionPane;
 import presentation.*;
 /**
