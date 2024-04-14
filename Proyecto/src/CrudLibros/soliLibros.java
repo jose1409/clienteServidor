@@ -19,7 +19,7 @@ public class soliLibros extends javax.swing.JFrame {
      */
     public soliLibros() {
         initComponents();
-        setVisible(true);
+        
         setLocationRelativeTo(null);
         
     }
