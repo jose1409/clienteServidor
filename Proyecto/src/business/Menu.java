@@ -4,6 +4,10 @@
  */
 package business;
 
+import CrudLibros.ConsultasLibros;
+import CrudLibros.CtrlLibros;
+import CrudLibros.Libro;
+import CrudLibros.soliLibros;
 import javax.swing.JOptionPane;
 import presentation.*;
 /**
@@ -169,6 +173,20 @@ public class Menu extends javax.swing.JFrame {
 
     private void mitLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitLibrosActionPerformed
         // TODO add your handling code here:
+        
+        //new soliLibros();
+        //(false);
+        
+         Libro mod = new Libro();
+        ConsultasLibros modC= new ConsultasLibros();
+        soliLibros frm = new soliLibros();
+        
+        
+        CtrlLibros ctrl = new CtrlLibros(mod,modC,frm);
+        ctrl.iniciar();
+        frm.setVisible(true);
+        
+        
     }//GEN-LAST:event_mitLibrosActionPerformed
 
     private void mitPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitPrestamoActionPerformed
