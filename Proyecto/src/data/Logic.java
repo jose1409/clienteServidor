@@ -4,7 +4,7 @@
  */
 package data;
 
-import CrudLibros.Libro;
+import domain.Libro;
 import static data.Listas.*;
 import domain.*;
 import presentation.Gui;

@@ -4,10 +4,8 @@
  */
 package business;
 
-import CrudLibros.ConsultasLibros;
-import CrudLibros.CtrlLibros;
-import CrudLibros.Libro;
-import CrudLibros.soliLibros;
+import domain.Libro;
+import presentation.soliLibros;
 import javax.swing.JOptionPane;
 import presentation.*;
 /**
@@ -46,7 +44,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         mitSalir = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Proyecto");
         setBackground(new java.awt.Color(153, 255, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -185,7 +183,7 @@ public class Menu extends javax.swing.JFrame {
         CtrlLibros ctrl = new CtrlLibros(mod,modC,frm);
         ctrl.iniciar();
         frm.setVisible(true);
-        
+        setVisible(false);
         
     }//GEN-LAST:event_mitLibrosActionPerformed
 

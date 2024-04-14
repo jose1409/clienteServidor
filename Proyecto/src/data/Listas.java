@@ -4,7 +4,7 @@
  */
 package data;
 
-import CrudLibros.Libro;
+import domain.Libro;
 import domain.*;
 import java.util.ArrayList;
 

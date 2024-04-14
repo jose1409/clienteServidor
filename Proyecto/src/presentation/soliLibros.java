@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package CrudLibros;
+package presentation;
 
 import data.Logic;
 import presentation.Gui;
@@ -19,7 +19,7 @@ public class soliLibros extends javax.swing.JFrame {
      */
     public soliLibros() {
         initComponents();
-        setVisible(true);
+        
         setLocationRelativeTo(null);
         
     }
