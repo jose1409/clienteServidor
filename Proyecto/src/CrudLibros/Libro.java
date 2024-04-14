@@ -27,7 +27,7 @@ public class Libro {
         this.disponibilidad = true;
     }
 
-    public Libro(int id, Autor autor, Estudiante estudiante, String nombre, String fechaLanzamiento, boolean disponibilidad) {
+    public Libro(int id, String autor, String estudiante, String nombre, String fechaLanzamiento, boolean disponibilidad) {
         this.id = id;
         this.autor = autor;
         this.estudiante = null;
@@ -44,19 +44,19 @@ public class Libro {
         this.id = id;
     }
 
-    public Autor getAutor() {
+    public String getAutor() {
         return autor;
     }
 
-    public void setAutor(Autor autor) {
+    public void setAutor(String autor) {
         this.autor = autor;
     }
 
-    public Estudiante getEstudiante() {
+    public String getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
+    public void setEstudiante(String estudiante) {
         this.estudiante = estudiante;
     }
 
@@ -76,7 +76,7 @@ public class Libro {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
-    public boolean isDisponibilidad() {
+    public boolean getDisponibilidad() {
         return disponibilidad;
     }
 
