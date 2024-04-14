@@ -25,6 +25,8 @@ public class Autor extends Persona {
         this.id = 0;
         this.nacionalidad = "";
     }
+    
+
 
     public int getId() {
         return id;

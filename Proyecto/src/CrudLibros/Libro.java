@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package domain;
+package CrudLibros;
+
+import domain.Autor;
+import domain.Estudiante;
 
 /**
  *
@@ -11,8 +14,8 @@ package domain;
 public class Libro {
 
     private int id;
-    Autor autor;
-    Estudiante estudiante;
+    private String autor;
+    private String estudiante;
     private String nombre;
     private String fechaLanzamiento;
     private boolean disponibilidad;
