@@ -4,6 +4,8 @@
  */
 package domain;
 
+import domain.Persona;
+
 /**
  *
  * @author Usuario
