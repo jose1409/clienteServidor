@@ -16,14 +16,14 @@ import presentation.Gui;
  * @author Usuario
  */
 public class Crud {
-    
-    public static final String url = "jdbc:mysql://localhost:3306/test";//biblioteca
+    String base = "biblioteca";
+    public static final String url = "jdbc:mysql://localhost:3306/"+"biblioteca";
     public static final String user = "root";
     public static final String pass = "";
 
     public Crud() {
-        infoEstudiantesLocal();
-        infoAutorLocal();
+      //  infoEstudiantesLocal();
+     //   infoAutorLocal();
     }
 
     //método para conectar con la bd

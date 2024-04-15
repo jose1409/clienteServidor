@@ -5,7 +5,8 @@
 package presentation;
 
 import domain.Estudiante;
-import business.Menu;
+
+import business.Menu2;
 import data.Crud;
 import static data.Listas.*;
 import data.Logic;
@@ -27,7 +28,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         txtNombre.requestFocus();
-    // Agregar un KeyListener al JTextField
+   /* // Agregar un KeyListener al JTextField
         btnAgregar.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 // Verificar si la tecla presionada es la tecla "0"
@@ -103,7 +104,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
                         break;
                 }
             }
-        });
+        });*/
     }
 
     /**
@@ -357,7 +358,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelefonoActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        String nombre = txtNombre.getText().trim();
+        /*String nombre = txtNombre.getText().trim();
         String apellido = txtApellido.getText().trim();
         String telefono = txtTelefono.getText().trim();
         String carnet = txtCarnet.getText().trim();
@@ -374,16 +375,16 @@ public class soliEstudiantes extends javax.swing.JFrame {
             Crud.InsertarInfoEstudiante(e);
             Gui.print("Agregado exitosamente");
             limpiar();
-        }
+        }*/
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         setVisible(false);
-        Menu();
+        Menu2();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnVerAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerAutoresActionPerformed
-        Logic.mostrarEstudiantes();
+        //Logic.mostrarEstudiantes();
     }//GEN-LAST:event_btnVerAutoresActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -438,8 +439,8 @@ public class soliEstudiantes extends javax.swing.JFrame {
         });
     }
 
-    public static void Menu() {
-        Menu menu = new Menu();
+    public static void Menu2() {
+        Menu2 menu = new Menu2();
         menu.setVisible(true);
     }
 

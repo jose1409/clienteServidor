@@ -6,7 +6,8 @@ package presentation;
 
 import data.Logic;
 import presentation.Gui;
-import static presentation.soliAutor.Menu;
+
+import static presentation.soliEstudiantes.Menu2;
 
 /**
  *
@@ -298,7 +299,7 @@ public class soliLibros extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         setVisible(false);
-        Menu();
+        Menu2();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnVerAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerAutoresActionPerformed

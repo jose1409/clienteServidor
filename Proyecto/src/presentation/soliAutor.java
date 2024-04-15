@@ -4,8 +4,7 @@
  */
 package presentation;
 
-import business.Menu;
-import business.Menu;
+
 import data.Crud;
 import static data.Listas.autor;
 import data.Logic;
@@ -13,6 +12,8 @@ import domain.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import presentation.Gui;
+import static presentation.soliEstudiantes.Menu2;
+import business.Menu2;
 
 /**
  *
@@ -383,7 +384,7 @@ public class soliAutor extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         setVisible(false);
-        Menu();
+        Menu2();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnVerAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerAutoresActionPerformed
@@ -445,8 +446,8 @@ public class soliAutor extends javax.swing.JFrame {
         });
     }
 
-    public static void Menu() {
-        Menu menu = new Menu();
+    public static void Menu2() {
+        Menu2 menu = new Menu2();
         menu.setVisible(true);
     }
 
