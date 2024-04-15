@@ -4,6 +4,7 @@
  */
 package business;
 
+import domain.Estudiante;
 import domain.Libro;
 import presentation.soliLibros;
 import javax.swing.JOptionPane;
@@ -192,7 +193,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_mitPrestamoActionPerformed
 
     private void mitEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitEstudiantesActionPerformed
-        new soliEstudiantes();
+        Estudiante mod = new Estudiante();
+        ConsultaEstudiante modC= new ConsultaEstudiante();
+        soliEstudiantes frm = new soliEstudiantes();
+        
+        
+        CtrlEstuditante ctrl = new CtrlEstuditante(mod,modC,frm);
+        ctrl.iniciar();
+        frm.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_mitEstudiantesActionPerformed
 

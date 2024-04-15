@@ -4,6 +4,7 @@
  */
 package data;
 
+import domain.Estudiante;
 import domain.*;
 import java.sql.*;
 import java.util.logging.Level;
