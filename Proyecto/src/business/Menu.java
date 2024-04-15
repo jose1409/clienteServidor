@@ -4,6 +4,8 @@
  */
 package business;
 
+import presentation.soliAutor;
+import domain.Autor;
 import domain.Libro;
 import presentation.soliLibros;
 import javax.swing.JOptionPane;
@@ -167,8 +169,25 @@ public class Menu extends javax.swing.JFrame {
 
     private void mitAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitAutoresActionPerformed
         //Pestaña de ingreso de clientes
-        new soliAutor();
+        //new soliAutor();
+        //setVisible(false);
+        
+          // TODO add your handling code here:
+        
+        //new soliLibros();
+        //(false);
+        
+        Autor mod = new Autor();
+        consultaAutor modC= new consultaAutor();
+        soliAutor frm = new soliAutor();
+        
+        
+        CtrAutor ctr = new CtrAutor(mod,modC,frm);
+        ctr.iniciar();
+        frm.setVisible(true);
         setVisible(false);
+        
+               
     }//GEN-LAST:event_mitAutoresActionPerformed
 
     private void mitLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitLibrosActionPerformed
