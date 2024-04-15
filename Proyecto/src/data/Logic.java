@@ -29,43 +29,46 @@ public class Logic {
         Gui.print(temp);
     }*/
 
-    //Ver Autores
-    public static void mostrarAutores() {
-        String temp = "---Autores---\n";
-        for (int i = 0; i < autor.size(); i++) {
-            Autor autorActual = autor.get(i);
-            temp += "Nombre: " + autorActual.getNombre() + "\n"
-                    + "Apellidos: " + autorActual.getApellido() + "\n"
-                    + "Telefono: " + autorActual.getTelefono() + "\n"
-                    + "Nacionalidad: " + autorActual.getNacionalidad() + "\n\n";
-        }
-        Gui.print(temp);
+    //metodo mostrar autores
+ public static void mostrarAutores() {
+    String temp = "---Autores---\n";
+    for (int i = 0; i < autor.size(); i++) {
+        Autor autorActual = autor.get(i);
+        temp += "Nombre: " + autorActual.getNombre() + "\n"
+                + "Apellidos: " + autorActual.getApellido() + "\n"
+                + "Telefono: " + autorActual.getTelefono() + "\n"
+                + "Nacionalidad: " + autorActual.getNacionalidad() + "\n\n";
     }
+    Gui.print(temp);
+}
 
+
+    // metodo para mostrar estudiantes
     public static void mostrarEstudiantes() {
-        String temp = "---Autores---\n";
+        String temp = "---Estudiantes---\n";
         for (int i = 0; i < estudiante.size(); i++) {
             Estudiante estudianteActual = estudiante.get(i);
             temp += "Nombre: " + estudianteActual.getNombre() + "\n"
                     + "Apellidos: " + estudianteActual.getApellido() + "\n"
                     + "Telefono: " + estudianteActual.getTelefono() + "\n"
-                    + "Carnet: " + estudianteActual.getCarnet()+ "\n\n";
+                    + "Carnet: " + estudianteActual.getCarnet() + "\n\n";
         }
         Gui.print(temp);
     }
     
-    
-        public static void mostrarLibros() {
+    //metodo para mostrar libros
+    public static void mostrarLibros() {
         String temp = "---Libros---\n";
-        for (int i = 0; i <libro.size(); i++) {
+        for (int i = 0; i < libro.size(); i++) {
             Libro libroActual = libro.get(i);
-            temp += "Id: " + libroActual.getId()+ "\n"
-                    + "Autor: " + libroActual.getAutor()+ "\n"
-                    + "Fecha lanzamiento: " + libroActual.getFechaLanzamiento()+ "\n"
-                    + "Disponibilidad: " + libroActual.getDisponibilidad()+ "\n\n";
+            String disponibilidad = (libroActual.getDisponibilidad()) ? "Disponible" : "No disponible";
+            temp += "Id: " + libroActual.getId() + "\n"
+                    + "Autor: " + libroActual.getAutor() + "\n"
+                    + "Fecha de Lanzamiento: " + libroActual.getFechaLanzamiento() + "\n"
+                    + "Disponibilidad: " + disponibilidad + "\n\n";
         }
         Gui.print(temp);
     }
-        
-        
 }
+        
+       

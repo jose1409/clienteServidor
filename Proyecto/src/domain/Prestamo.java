@@ -32,8 +32,8 @@ public class Prestamo {
         this.codigo = codigo;
         this.fechaRegistro = fechaRegistro;
         this.estado = estado;
-        this.id_estudiante = id_estudiante;
-        this.id_libro = id_libro;
+        this.id_estudiante = estudiante;
+        this.id_libro = libro;
     }
 
     // get y set

@@ -1,5 +1,7 @@
 package business;
 
+import data.Listas;
+import data.Crud;
 import presentation.soliPrestamo;
 import domain.Prestamo;
 import domain.Estudiante;
@@ -16,6 +18,8 @@ public class CtrlPrestamo implements ActionListener {
     private ConsultasPrestamo consultas = new ConsultasPrestamo();
     private soliPrestamo vista = new soliPrestamo();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private ConsultasLibros consultasLibros = new ConsultasLibros();
+    private Crud crud = new Crud();
 
     public CtrlPrestamo(Prestamo modelo, ConsultasPrestamo consultas, soliPrestamo vista) {
         this.modelo = modelo;
@@ -26,7 +30,11 @@ public class CtrlPrestamo implements ActionListener {
         this.vista.btnEliminar.addActionListener(this);
         this.vista.btnLimpiar.addActionListener(this);
         this.vista.btnBuscar.addActionListener(this);
-
+        this.vista.btnEstadistica.addActionListener(this);
+        this.vista.btnVerLibros.addActionListener(this);
+        this.consultasLibros = consultasLibros;
+        this.crud = crud;
+        this.vista.btnVerEstudiantes.addActionListener(this);
     }
 
     public void iniciar() {
@@ -42,12 +50,19 @@ public class CtrlPrestamo implements ActionListener {
             LocalDate fecha = LocalDate.parse(vista.txtFechaRegistro.getText(), formatter);
             modelo.setFechaRegistro(fecha);
             modelo.setEstado(Boolean.parseBoolean(vista.txtEstado.getText()));
+            //estudiante
             Estudiante estudiante = new Estudiante();
-            Libro libro = new Libro();
+            estudiante.setId(Integer.parseInt(vista.txtEstudiante.getText()));
             modelo.setId_estudiante(estudiante);
+            //libro
+            Libro libro = new Libro();
+            libro.setId(Integer.parseInt(vista.txtLibro.getText()));
             modelo.setId_libro(libro);
-
             if (consultas.registrar(modelo)) {
+                int ultimoId = consultas.ultimoId();
+                modelo.setId(ultimoId);
+                modelo.setCodigo("P-" + ultimoId);
+                consultas.actualizarCodigo(modelo);
                 JOptionPane.showMessageDialog(null, "¡Préstamo de libro guardado!");
                 limpiar();
             } else {
@@ -58,14 +73,19 @@ public class CtrlPrestamo implements ActionListener {
 
         //boton de modificar
         if (e.getSource() == vista.btnModificar) {
-
             modelo.setId(Integer.parseInt(vista.txtId.getText()));
             modelo.setCodigo(vista.txtCodigo.getText());
             LocalDate fecha = LocalDate.parse(vista.txtFechaRegistro.getText(), formatter);
             modelo.setFechaRegistro(fecha);
             modelo.setEstado(Boolean.parseBoolean(vista.txtEstado.getText()));
-            modelo.setId_estudiante(new Estudiante());
-            modelo.setId_libro(new Libro());
+            //estudiante
+            Estudiante estudiante = new Estudiante();
+            estudiante.setId(Integer.parseInt(vista.txtEstudiante.getText()));
+            modelo.setId_estudiante(estudiante);
+            //libro
+            Libro libro = new Libro();
+            libro.setId(Integer.parseInt(vista.txtLibro.getText()));
+            modelo.setId_libro(libro);
             if (consultas.modificar(modelo)) {
                 JOptionPane.showMessageDialog(null, "¡Préstamo modificado!");
                 limpiar();
@@ -93,8 +113,8 @@ public class CtrlPrestamo implements ActionListener {
                 vista.txtCodigo.setText(modelo.getCodigo());
                 vista.txtFechaRegistro.setText(modelo.getFechaRegistro().format(formatter));
                 vista.txtEstado.setText(String.valueOf(modelo.isEstado()));
-                vista.txtEstudiante.setText(modelo.getId_estudiante().toString());
-                vista.txtLibro.setText(modelo.getId_libro().toString());
+                vista.txtEstudiante.setText(modelo.getId_estudiante().getCarnet());
+                vista.txtLibro.setText(modelo.getId_libro().getNombre());
 
             } else {
                 JOptionPane.showMessageDialog(null, "¡No se encontró ningún préstamo!");
@@ -104,8 +124,35 @@ public class CtrlPrestamo implements ActionListener {
         if (e.getSource() == vista.btnLimpiar) {
             limpiar();
         }
+
+        //Boton de estadistica
+        if (e.getSource() == vista.btnEstadistica) {
+            int cantActivos = consultas.cuentaActivos();
+            int cantInactivos = consultas.cuentaInactivos();
+            int cantTotal = consultas.cuentaPrestamo();
+            String texto = "---Estadística de Préstamos---\n"
+                    + "Cantidad de préstamos activos: " + cantActivos + "\n"
+                    + "Cantidad de préstamos inactivos: " + cantInactivos + "\n"
+                    + "Total de préstamos: " + cantTotal;
+            JOptionPane.showMessageDialog(null, texto);
+            limpiar();
+        }
+
+        // boton Ver libros
+        if (e.getSource() == vista.btnVerLibros) {
+            consultasLibros.obtenerLibros();
+            mostrarLibros();
+        }
+
+        // boton Ver Estudiantes
+        if (e.getSource() == vista.btnVerEstudiantes) {
+            crud.obtenerEstudiantes();
+            crud.mostrarEstudiantes();
+        }
+
     }
 
+    //metodo de limpiar
     public void limpiar() {
         vista.txtId.setText(null);
         vista.txtCodigo.setText(null);
@@ -113,6 +160,22 @@ public class CtrlPrestamo implements ActionListener {
         vista.txtEstado.setText(null);
         vista.txtEstudiante.setText(null);
         vista.txtLibro.setText(null);
+    }
+
+    //metodo mostrar libros
+    private void mostrarLibros() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Lista de Libros:\n");
+        for (Libro libro : Listas.libro) {
+            if (libro.getDisponibilidad()) {
+                sb.append("Id: ").append(libro.getId())
+                        .append(", Nombre: ").append(libro.getNombre())
+                        .append(", Autor: ").append(libro.getAutor())
+                        .append(", Fecha de lanzamiento: ").append(libro.getFechaLanzamiento())
+                        .append("\n");
+            }
+        }
+        JOptionPane.showMessageDialog(null, sb.toString());
     }
 
 }

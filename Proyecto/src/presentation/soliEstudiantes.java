@@ -13,6 +13,7 @@ import data.Logic;
 import domain.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         txtNombre.requestFocus();
-   /* // Agregar un KeyListener al JTextField
+        /* // Agregar un KeyListener al JTextField
         btnAgregar.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 // Verificar si la tecla presionada es la tecla "0"
@@ -128,7 +129,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
-        btnVerAutores = new javax.swing.JButton();
+        btnVerEstudiantes = new javax.swing.JButton();
         txtCarnet = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -137,6 +138,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
+        btnEstadistica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Autor");
@@ -196,12 +198,12 @@ public class soliEstudiantes extends javax.swing.JFrame {
             }
         });
 
-        btnVerAutores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
-        btnVerAutores.setText("Ver Estudiantes");
-        btnVerAutores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVerAutores.addActionListener(new java.awt.event.ActionListener() {
+        btnVerEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
+        btnVerEstudiantes.setText("Ver Estudiantes");
+        btnVerEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVerEstudiantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerAutoresActionPerformed(evt);
+                btnVerEstudiantesActionPerformed(evt);
             }
         });
 
@@ -209,6 +211,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         txtCarnet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         btnGuardar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,6 +220,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         });
 
         btnModificar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +229,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
         });
 
         btnEliminar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,14 +238,27 @@ public class soliEstudiantes extends javax.swing.JFrame {
         });
 
         btnLimpiar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/clear.png"))); // NOI18N
         btnLimpiar.setText("Limpiar");
 
         btnBuscar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         jLabel7.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         jLabel7.setText("ID");
+
+        btnEstadistica.setBackground(new java.awt.Color(204, 204, 204));
+        btnEstadistica.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEstadistica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analytics.png"))); // NOI18N
+        btnEstadistica.setText("Estadística");
+        btnEstadistica.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEstadistica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstadisticaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -268,7 +286,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnVerAutores)))
+                                .addComponent(btnVerEstudiantes)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -278,7 +296,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
                                 .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                                 .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -303,6 +321,10 @@ public class soliEstudiantes extends javax.swing.JFrame {
                                 .addGap(11, 11, 11)
                                 .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addContainerGap())))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(btnEstadistica)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +332,7 @@ public class soliEstudiantes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnVerAutores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnVerEstudiantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -347,7 +369,9 @@ public class soliEstudiantes extends javax.swing.JFrame {
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar)
                     .addComponent(btnBuscar))
-                .addGap(55, 55, 55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEstadistica)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -383,9 +407,11 @@ public class soliEstudiantes extends javax.swing.JFrame {
         Menu2();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void btnVerAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerAutoresActionPerformed
-        //Logic.mostrarEstudiantes();
-    }//GEN-LAST:event_btnVerAutoresActionPerformed
+    private void btnVerEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerEstudiantesActionPerformed
+        Crud crud = new Crud();
+        crud.obtenerEstudiantes();
+        crud.mostrarEstudiantes();
+    }//GEN-LAST:event_btnVerEstudiantesActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
@@ -402,6 +428,14 @@ public class soliEstudiantes extends javax.swing.JFrame {
     private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoActionPerformed
+
+    private void btnEstadisticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstadisticaActionPerformed
+        // TODO add your handling code here:
+        Crud crud = new Crud();
+        int totalEstudiantes = crud.conteoEstudiantes();
+        JOptionPane.showMessageDialog(null, "---Estadística de Estudiantes---\n"
+                + "Total de Estudiantes: " + totalEstudiantes);
+    }//GEN-LAST:event_btnEstadisticaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,10 +489,11 @@ public class soliEstudiantes extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnEstadistica;
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnVerAutores;
+    private javax.swing.JButton btnVerEstudiantes;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

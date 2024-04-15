@@ -29,6 +29,7 @@ public class CtrlLibros implements ActionListener {
         this.vista.btnEliminar.addActionListener(this);
         this.vista.btnLimpiar.addActionListener(this);
         this.vista.btnBuscar.addActionListener(this);
+        this.vista.btnEstadistica.addActionListener(this);
 
     }
 
@@ -104,6 +105,18 @@ public class CtrlLibros implements ActionListener {
             }
         }
      if(e.getSource()==vista.btnLimpiar){
+            limpiar();
+        }
+                  //Boton de estadistica
+        if (e.getSource() == vista.btnEstadistica) {
+            int cantDisponibles = consultas.cuentaDisponibles();
+            int cantNoDisponibles = consultas.cuentaNoDisponibles();
+            int cantTotal = consultas.cuentaDisponibilidad();
+            String texto = "---Estadística de Libros---\n"
+                    + "Cantidad de libros disponibles: " + cantDisponibles + "\n"
+                    + "Cantidad de libros no disponibles: " + cantNoDisponibles + "\n"
+                    + "Total de libros: " + cantTotal;
+            JOptionPane.showMessageDialog(null, texto);
             limpiar();
         }
     }
