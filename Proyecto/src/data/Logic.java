@@ -52,4 +52,19 @@ public class Logic {
         }
         Gui.print(temp);
     }
+    
+    
+        public static void mostrarLibros() {
+        String temp = "---Libros---\n";
+        for (int i = 0; i <libro.size(); i++) {
+            Libro libroActual = libro.get(i);
+            temp += "Id: " + libroActual.getId()+ "\n"
+                    + "Autor: " + libroActual.getAutor()+ "\n"
+                    + "Fecha lanzamiento: " + libroActual.getFechaLanzamiento()+ "\n"
+                    + "Disponibilidad: " + libroActual.getDisponibilidad()+ "\n\n";
+        }
+        Gui.print(temp);
+    }
+        
+        
 }

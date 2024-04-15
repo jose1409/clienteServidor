@@ -17,4 +17,5 @@ public class Listas {
     public static ArrayList<Autor> autor = new ArrayList<>();
     public static ArrayList<Estudiante> estudiante = new ArrayList<>();
     public static ArrayList<Libro> libro = new ArrayList<>();
+    public static ArrayList<Prestamo> prestamo = new ArrayList<>();
 }

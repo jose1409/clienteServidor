@@ -8,6 +8,8 @@ import domain.Libro;
 import presentation.soliLibros;
 import javax.swing.JOptionPane;
 import presentation.*;
+import domain.Prestamo;
+
 /**
  *
  * @author Usuario
@@ -189,6 +191,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void mitPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitPrestamoActionPerformed
         // TODO add your handling code here:
+        Prestamo pres = new Prestamo();
+        ConsultasPrestamo modC= new ConsultasPrestamo();
+        soliPrestamo frm = new soliPrestamo();
+               
+        CtrlPrestamo ctrl = new CtrlPrestamo(pres,modC,frm);
+        ctrl.iniciar();
+        frm.setVisible(true);
+             
     }//GEN-LAST:event_mitPrestamoActionPerformed
 
     private void mitEstudiantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitEstudiantesActionPerformed

@@ -16,7 +16,7 @@ import presentation.Gui;
  */
 public class Crud {
     
-    public static final String url = "jdbc:mysql://localhost:3306/biblioteca";
+    public static final String url = "jdbc:mysql://localhost:3306/test";//biblioteca
     public static final String user = "root";
     public static final String pass = "";
 
